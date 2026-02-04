@@ -1,190 +1,110 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Frases Top</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background: #0f0f0f;
-  color: #fff;
-  padding: 20px;
-}
-h1, h2 {
-  text-align: center;
-}
-select, button, input {
-  padding: 10px;
-  margin: 5px 0;
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-}
-button {
-  background: #00ff88;
-  font-weight: bold;
-}
-.frase {
-  background: #1e1e1e;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 10px 0;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frases Top 🔥</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f2f2;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    h2 {
+      color: #ff6a00;
+      margin-top: 40px;
+    }
+    .frase {
+      background: #fff;
+      padding: 15px;
+      margin: 12px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .texto {
+      flex: 1;
+    }
+    button {
+      background: #ff6a00;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 12px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>🔥 Frases Top 🔥</h1>
+<header>
+  <h1>Frases Top 🔥</h1>
+  <p>Status • Cria • Motivação • Reflexão</p>
+</header>
 
-<select id="categoria">
-  <option value="cria">Frases de Cria</option>
-  <option value="motivacional">Frases Motivacionais</option>
-  <option value="reflexao">Frases de Reflexão</option>
-</select>
+<section>
 
-<button onclick="novaFrase()">Nova Frase</button>
-<button onclick="copiarFrase()">Copiar Frase</button>
+<h2>😎 Frases de cria</h2>
 
-<div class="frase" id="frase"></div>
+<div class="frase"><span class="texto">Não é sorte, é foco.</span><button onclick="copiar(this)">Copiar</button></div>
+<div class="frase"><span class="texto">Quem duvidou, hoje observa.</span><button onclick="copiar(this)">Copiar</button></div>
+<div class="frase"><span class="texto">Nunca foi fácil, por isso é real.</span><button onclick="copiar(this)">Copiar</button></div>
+<div class="frase"><span class="texto">Cria não reclama, se adapta.</span><button onclick="copiar(this)">Copiar</button></div>
+<div class="frase"><span class="texto">Onde muitos param, a cria continua.</span><button onclick="copiar(this)">Copiar</button></div>
+<div class="frase"><span class="texto">Silêncio de cria vale mais que mil palavras.</span><button onclick="copiar(this)">Copiar</button></div>
+<div class="frase"><span class="texto">Cria aprende na dor e vence na raça.</span><button onclick="copiar(this)">Copiar</button></div>
 
-<h2>Criar nova frase</h2>
-<input id="novaFraseTexto" placeholder="Digite sua frase">
-<select id="novaCategoria">
-  <option value="cria">Cria</option>
-  <option value="motivacional">Motivacional</option>
-  <option value="reflexao">Reflexão</option>
-</select>
-<button onclick="addFrase()">Adicionar Frase</button>
+<h2>💪 Frases motivacionais</h2>
+
+<div class="frase"><span class="texto">Comece mesmo sem motivação.</span><button onclick="copiar(this)">Copiar</button></div>
+<div class="frase"><span class="texto">Quem insiste uma hora chega.</span><button onclick="copiar(this)">Copiar</button></div>
+<div class="frase"><span class="texto">O esforço de hoje é o orgulho de amanhã.</span><button onclick="copiar(this)">Copiar</button></div>
+<div class="frase"><span class="texto">Você é mais forte do que imagina.</span><button onclick="copiar(this)">Copiar</button></div>
+
+<h2>❤️ Frases de reflexão</h2>
+
+<div class="frase"><span class="texto">Silêncio também é resposta.</span><button onclick="copiar(this)">Copiar</button></div>
+<div class="frase"><span class="texto">Nem tudo que dói é ruim.</span><button onclick="copiar(this)">Copiar</button></div>
+<div class="frase"><span class="texto">Tudo passa.</span><button onclick="copiar(this)">Copiar</button></div>
+
+</section>
+
+<footer>
+  © 2026 - Frases Top | Copie e use 💬
+</footer>
 
 <script>
-const frases = {
-cria: [
-"Cria não espera, faz.",
-"Quem é cria não foge.",
-"Respeito se conquista.",
-"Favela vence.",
-"Mente fria, passo firme.",
-"Sem desculpa, só progresso.",
-"Quem é cria é constante.",
-"O foco é o topo.",
-"Lealdade acima de tudo.",
-"Criado no corre.",
-"Cria de verdade não quebra.",
-"Silêncio também é resposta.",
-"Visão de cria.",
-"Não é sorte, é esforço.",
-"Criado pra vencer.",
-"Disciplina é tudo.",
-"Sem mídia, só resultado.",
-"Cria não se explica.",
-"Vivência ensina.",
-"Sem pressa, sem pausa.",
-"Cria é postura.",
-"O corre não para.",
-"Quem é cria entende.",
-"Não é fase, é plano.",
-"Respeito é chave.",
-"Cria não copia.",
-"Base forte.",
-"Olho aberto sempre.",
-"Quem planta, colhe.",
-"Cria é visão.",
-"Sem medo.",
-"Sempre em frente."
-],
-motivacional: [
-"Acredite em você.",
-"Todo esforço vale a pena.",
-"Você é capaz.",
-"Não desista.",
-"Foque no seu sonho.",
-"Um passo por dia.",
-"O impossível é só questão de tempo.",
-"Persistência vence talento.",
-"Confie no processo.",
-"Você chegou até aqui.",
-"O sucesso começa na mente.",
-"Faça acontecer.",
-"Seja sua melhor versão.",
-"O agora importa.",
-"Continue mesmo cansado.",
-"Disciplina gera resultado.",
-"Aprenda com erros.",
-"Você pode mais.",
-"Levante e tente.",
-"Coragem muda tudo.",
-"O futuro depende de você.",
-"Não pare.",
-"Siga firme.",
-"Seu esforço conta.",
-"A vitória vem.",
-"Confiança é chave.",
-"Comece hoje.",
-"Evolua sempre.",
-"Não se compare.",
-"Você consegue.",
-"Sonhe grande.",
-"Avance."
-],
-reflexao: [
-"A vida ensina no silêncio.",
-"Nem tudo é pra sempre.",
-"Cada escolha tem consequência.",
-"O tempo revela tudo.",
-"Quem observa aprende.",
-"O silêncio diz muito.",
-"Nem toda batalha é visível.",
-"A calma traz clareza.",
-"Quem entende, evolui.",
-"O agora é tudo.",
-"Viver é aprender.",
-"O simples também é muito.",
-"Menos pressa, mais sentido.",
-"Cada um carrega sua luta.",
-"A verdade aparece.",
-"Pensar evita erros.",
-"A vida cobra.",
-"O tempo não volta.",
-"Valorize o momento.",
-"Aprender dói.",
-"O essencial é invisível.",
-"Ouça mais.",
-"Nem tudo precisa resposta.",
-"Reflita antes.",
-"A mente cria caminhos.",
-"Quem entende, aceita.",
-"A vida é escolha.",
-"Silêncio cura.",
-"O tempo ensina.",
-"Respeite o processo.",
-"Observe.",
-"Seja consciente."
-]
-};
-
-let fraseAtual = "";
-
-function novaFrase() {
-  const cat = document.getElementById("categoria").value;
-  const lista = frases[cat];
-  fraseAtual = lista[Math.floor(Math.random() * lista.length)];
-  document.getElementById("frase").innerText = fraseAtual;
-}
-
-function copiarFrase() {
-  navigator.clipboard.writeText(fraseAtual);
-  alert("Frase copiada!");
-}
-
-function addFrase() {
-  const texto = document.getElementById("novaFraseTexto").value;
-  const cat = document.getElementById("novaCategoria").value;
-  if (texto !== "") {
-    frases[cat].push(texto);
-    document.getElementById("novaFraseTexto").value = "";
-    alert("Frase adicionada!");
-  }
+function copiar(botao) {
+  const texto = botao.parentElement.querySelector('.texto').innerText;
+  navigator.clipboard.writeText(texto);
+  botao.innerText = "Copiado!";
+  setTimeout(() => botao.innerText = "Copiar", 1500);
 }
 </script>
 
